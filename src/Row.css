@@ -1,0 +1,21 @@
+/* Displays all the input boxes in a single row */
+/* This is the CSS file for the Row component */
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  align-items: center;
+}
+  
+.row > * {
+  height: 30px;
+}
+
+/* Styling for the Select component */
+.row > :last-child {
+    vertical-align: top;
+    height: 35px;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    
+}
