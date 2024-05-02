@@ -5,6 +5,18 @@
   text-align: center;
 }
 
+.horizontalRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.horizontalRow > * {
+  margin-right: 50px;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

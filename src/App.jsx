@@ -10,9 +10,18 @@ import Select from 'react-select'
 function App() {
   const [math, setMath] = useState("")
 
-  var mathString = ""
+  var mathString = (s => s.raw)
+  `\begin{align*}
+    [1] & (1) & (\forall x)(p \lor Fx) && \text{P}\\
+    [2] & (2) & -p && \text{P}\\
+    [1] & (3) & p \lor Fx && (1)\text{UI}\\
+    [1,2] & (4) & Fx && (2)(3)\text{TF}\\
+    [1,2] & (5) & (\forall x)Fx && (4)\text{UG}\\
+    [1] & (6) & -p \supset (\forall x)Fx && [2](4)\text{D}\\
+    [1] & (7) & p \lor (\forall x)Fx && (6)\text{TF}
+  \end{align*}`[0]
 
-  systemOptions = [
+  var systemOptions = [
     { value: 'TFDS', label: 'Basic TFDS'},
     { value: 'TFDS+', label: 'Extended TFDS'},
     { value: 'TFDS++', label: 'Further Extended TFDS'},
@@ -23,20 +32,18 @@ function App() {
   var [system, setSystem] = useState("poly")
   return (
     <>
-      <Select options = {systemOptions} onChange = {setSystem} />
-      <h1>Deduction Typesetter</h1>
+    <h1>Deduction Typesetter</h1>
+    <div className = "horizontalRow">
+      <div>
+      <h2>Enter your proof here:</h2>
+      <Select options = {systemOptions} onChange = {setSystem} defaultValue={systemOptions[3]}
+      isSearchable = {false} placeholder="Select your TFDS" />
       <Row />
-
-
-      {/* <BlockMath math="\begin{align*}
-                [1] & (1) & (\forall x)(p \lor Fx) && \text{P}\\
-                [2] & (2) & -p && \text{P}\\
-                [1] & (3) & p \lor Fx && (1)\text{UI}\\
-                [1,2] & (4) & Fx && (2)(3)\text{TF}\\
-                [1,2] & (5) & (\forall x)Fx && (4)\text{UG}\\
-                [1] & (6) & -p \supset (\forall x)Fx && [2](4)\text{D}\\
-                [1] & (7) & p \lor (\forall x)Fx && (6)\text{TF}
-            \end{align*}"/> */}
+      </div>
+      <div className='output'>
+        <BlockMath math={mathString}/>
+      </div>
+    </div>
     </>
   )
 }
