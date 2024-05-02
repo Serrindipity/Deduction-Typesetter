@@ -11,6 +11,44 @@ function Row(system) {
 
     const [currentSystem, setSystem] = useState(!system ? system : "poly")
 
+    const tfdsOptions = [
+        { value: 'P', label: 'P' },
+        { value: 'D', label: 'D' },
+        { value: 'MP', label: 'MP' },
+        { value: 'MT', label: 'MT' },
+        { value: 'DN', label: 'DN' },
+        { value: 'W', label: 'W' },
+    ];
+
+    const tfdsPlusOptions = [
+        { value: 'P', label: 'P' },
+        { value: 'D', label: 'D' },
+        { value: 'MP', label: 'MP' },
+        { value: 'MT', label: 'MT' },
+        { value: 'DN', label: 'DN' },
+        { value: 'W', label: 'W' },
+        { value: 'CNJ', label: 'CNJ' },
+        { value: 'MCND', label: 'MCND' },
+        { value: 'CA', label: 'CA' },
+        { value: 'RAA', label: 'RAA' },
+    ];
+
+    const tfdsPlusPlusOptions = [
+        { value: 'P', label: 'P' },
+        { value: 'D', label: 'D' },
+        { value: 'MP', label: 'MP' },
+        { value: 'MT', label: 'MT' },
+        { value: 'DN', label: 'DN' },
+        { value: 'W', label: 'W' },
+        { value: 'CNJ', label: 'CNJ' },
+        { value: 'MCND', label: 'MCND' },
+        { value: 'CA', label: 'CA' },
+        { value: 'RAA', label: 'RAA' },
+        { value: 'BIC', label: 'BIC' },
+        { value: 'DIL', label: 'DIL' },
+        { value: 'DM', label: 'DM' },
+    ];
+
     const polyOptions = [
         { value: 'P', label: 'P' },
         { value: 'D', label: 'D' },
